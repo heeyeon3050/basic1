@@ -21,7 +21,7 @@ public class MemberService {
             return RsData.of("F-2", "비밀번호가 일치하지 않습니다.");
         }
 
-        return RsData.of("S-1", username + " 님 환영합니다.");
+        return RsData.of("S-1", username + " 님 환영합니다.", member.getId());
     }
 
     public Member findById(long id) {

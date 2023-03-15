@@ -26,7 +26,7 @@ public class MemberController {
 
     @GetMapping("/member/login")
     @ResponseBody
-    public RsData login(String username, String password, HttpServletResponse resp){ //resp에 어떤 값이 들어오는 거야? 자동으로 들어와? 입력은 username, password만 하는데
+    public RsData login(String username, String password, HttpServletResponse resp){
         if ( username == null || username.trim().length() == 0 ) {
             return RsData.of("F-3", "username(을)를 입력해주세요.");
         }
@@ -69,7 +69,7 @@ public class MemberController {
             loginedMemberId = Arrays.stream(req.getCookies())
                     .filter(cookie -> cookie.getName().equals("loginedMemberId"))
                     .map(Cookie::getValue)
-                    .mapToInt(Integer::parseInt)
+                    .mapToLong(Long::parseLong)
                     .findFirst()
                     .orElse(0);
         }
