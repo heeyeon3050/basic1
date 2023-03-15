@@ -27,7 +27,6 @@ public class HomeController {
     private int n;
     private List<Person> people;
     //필드 주입
-    @Autowired
     private MemberService memberService;
 
     public HomeController(MemberService memberService){

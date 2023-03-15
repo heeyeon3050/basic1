@@ -23,4 +23,8 @@ public class MemberService {
 
         return RsData.of("S-1", username + " 님 환영합니다.");
     }
+
+    public Member findById(long id) {
+        return memberRepository.findById(id);
+    }
 }
